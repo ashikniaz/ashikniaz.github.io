@@ -2,15 +2,17 @@
 <html>
 
 <head>
-    <title>Mapping Ohio's Race</title>
-    <h1 align="center">How Racial Demographics in Ohio Have Changed Over The Last 40 Years</h1>
+    <title>Mapping Ohio's Ethnicity</title>
+    <h1 align="center">How Ethnicity in Ohio Has Changed Over The Last 40 Years</h1>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="leaflet.css" />
-    <link rel="stylesheet" href="interactiveMap.css" />
+    <link rel="stylesheet" href="choroplethmap.css" />
+    <link rel="stylesheet" type="text/css" href="treemap.css">
     <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="parallelpointplot.css">
 
     <script src="leaflet.js"></script>
     <script src="ohiocounties.js"></script>
@@ -22,9 +24,9 @@
     <script src="bootstrap-slider.js"></script>
 </head>
 
-<div id="map" style="margin:auto;width:35%;padding: 10px;"></div>
-<div id="viz" style="width:500px;height:500px;right:5%;top:7%;float:left"></div>
-<div id="example" class="parcoords" style="width:1000px;height:300px;left:0;position:fixed;bottom:5%;z-index:9999; "></div>
+<div id="map" ></div>
+<div id="treemap" ></div>
+<div id="parallelpointplot" class="parcoords" ></div>
 
 <body>
 
@@ -38,7 +40,7 @@
     ]
     // instantiate d3plus
     var visualization = d3plus.viz()
-        .container("#viz")  // container DIV to hold the visualization
+        .container("#treemap")  // container DIV to hold the visualization
         .data(sample_data)  // data to use with the visualization
         .type("tree_map")   // visualization type
         .id("name")         // key for which our data is unique on
@@ -47,7 +49,7 @@
     
     d3.csv('diversityranking.csv', function(data) {
     var colors = d3.scale.category20();
-    var parcoords = d3.parcoords()("#example")
+    var parcoords = d3.parcoords()("#parallelpointplot")
     .data(data)
     .hideAxis(["name"])
     .color(colors)

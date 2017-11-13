@@ -1,0 +1,8 @@
+#parallelpointplot {
+width:1000px;
+height:300px;
+left:0;
+position:fixed;
+bottom:5%;
+z-index:9999;
+}
