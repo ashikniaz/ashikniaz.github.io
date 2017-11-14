@@ -1,9 +1,56 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.grid{
+  display: grid;
+  height:100%;
+  grid-template-columns: 2% 50% 35% 10% 2%;
+  grid-template-rows: 2.5% 5% 55% 30% 5% 2.5%;
+  grid-template-areas:
+  ". . . . ."
+  ". title title title ."
+  ". choroplethmap treemap buttons ."
+  ". parallelcoordinateplot parallelcoordinateplot buttons ." 
+  ". infosection infosection buttons ."
+  ". . . . ."
+}
+.title{
+ grid-area:title;
+ background-color: yellow;
+ text-align: center;
+ line-height:3em;
+ 
+}
+.choroplethmap{
+  grid-area:choroplethmap;
+  background-color: cornflowerblue;
+}
+.treemap{
+  grid-area:treemap;
+  background-color: greenyellow;
+}
+.buttons{
+  grid-area:buttons;
+  background-color: orange;
+
+}
+.parallelcoordinateplot{
+  grid-area:parallelcoordinateplot;
+  background-color: blueviolet;
+}
+.infosection{
+  grid-area:infosection;
+  background-color: seagreen;
+}
+
 body {
   font-size: 14px;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   margin: 24px;
   background: rgb(255, 255, 255);
   line-height: 1.45em;
+  height:100%
 }
 a {
   color: #555;
@@ -28,6 +75,9 @@ pre {
   background: #f2f2f2;
   border: 1px solid #ccc;
 }
+h1{
+  font-size: 2rem;
+}
 h1 small {
   font-weight: normal;
   font-size: 0.5em;
@@ -46,4 +96,7 @@ h3 {
 }
 input {
   font-size: 16px;
+}
+html {
+  height:95%
 }

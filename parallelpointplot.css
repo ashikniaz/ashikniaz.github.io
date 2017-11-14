@@ -1,8 +1,8 @@
 #parallelpointplot {
-width:1000px;
-height:300px;
-left:0;
-position:fixed;
-bottom:5%;
-z-index:9999;
+width:100%;
+height:100%;
+margin-top: 50px;
+margin: 0 auto;
+
+
 }
