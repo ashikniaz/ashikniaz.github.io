@@ -6,11 +6,12 @@
   display: grid;
   height:100%;
   grid-template-columns: 2% 50% 35% 10% 2%;
-  grid-template-rows: 2.5% 5% 55% 30% 5% 2.5%;
+  grid-template-rows: 2.5% 5% 50% 5% 30% 5% 2.5%;
   grid-template-areas:
   ". . . . ."
   ". title title title ."
   ". choroplethmap treemap buttons ."
+  ". slider treemap buttons . "
   ". parallelcoordinateplot parallelcoordinateplot buttons ." 
   ". infosection infosection buttons ."
   ". . . . ."
@@ -42,6 +43,10 @@
 .infosection{
   grid-area:infosection;
   background-color: seagreen;
+}
+.slider{
+  grid-area:slider;
+  background-color: pink;
 }
 
 body {
