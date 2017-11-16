@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="treemap.css">
     <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="parallelpointplot.css">
+    <link rel="stylesheet" type="text/css" href="parallelcoordinateplot.css">
 
     <script src="leaflet.js"></script>
     <script src="ohiocounties.js"></script>
@@ -27,7 +27,7 @@
         <div class="grid">
                 <div class="title">
                     
-                    <h1>How Ethnicity in Ohio Has Changed Over The Last 40 Years</h1>
+                    <h1>How Ethnicity in Ohio Has Changed over the Last 40 Years</h1>
                     
                 </div> 
 
@@ -44,7 +44,7 @@
                 </div> 
 
                 <div class="parallelcoordinateplot">
-                    <div id="parallelpointplot" class="parcoords" ></div>
+                    <div id="parallelcoordinateplot" class="parcoords" ></div>
                 </div> 
 
                 <div class="infosection">
@@ -54,6 +54,11 @@
                 <div class="slider">
                     Put the slider here 
                 </div> 
+
+                <div class="credits">
+                   <br />Created By: Ashik Niaz, Ryan Derge, and John Morgan Manos <br /> The Ohio State University 
+                </div> 
+
             </div>
 
 <script>
@@ -75,7 +80,7 @@
     
     d3.csv('diversityranking.csv', function(data) {
     var colors = d3.scale.category20();
-    var parcoords = d3.parcoords()("#parallelpointplot")
+    var parcoords = d3.parcoords()("#parallelcoordinateplot")
     .data(data)
     .hideAxis(["name"])
     .color(colors)
