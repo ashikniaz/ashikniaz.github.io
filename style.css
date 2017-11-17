@@ -5,8 +5,10 @@
 .grid{
   display: grid;
   height:100%;
-  grid-template-columns: 2% 50% 35% 10% 2%;
-  grid-template-rows: 1.5% 5% 48.5% 5% 30% 5% 3.5% 1.5%;
+  grid-template-columns: 2.25% 50% 35% 10% 2.25%;
+  grid-template-rows: .5% 5% 47.5% 5% 30% 5% 3% .5%;
+  grid-column-gap: .5%;
+  grid-row-gap: .5%;
   grid-template-areas:
   ". . . . ."
   ". title title title ."
@@ -23,32 +25,32 @@
 }
 .choroplethmap{
   grid-area:choroplethmap;
-  background-color: cornflowerblue;
+  background-color: rgba(143, 188, 219, .8);
 }
 .treemap{
   grid-area:treemap;
-  background-color: greenyellow;
+  background-color: rgba(143, 188, 219, .8);
   
 }
 .buttons{
   grid-area:buttons;
-  background-color: orange;
+  background-color: rgba(143, 188, 219, .8);
   
 
 }
 .parallelcoordinateplot{
   grid-area:parallelcoordinateplot;
-  background-color: blueviolet;
+  background-color: rgba(68, 114, 148, .8);
  
 }
 .infosection{
   grid-area:infosection;
-  background-color: seagreen;
+  background-color: rgba(143, 188, 219, .8);
   
 }
 .slider{
   grid-area:slider;
-  background-color: pink;
+  background-color: rgba(143, 188, 219, .8);
 }
 .credits{
   grid-area:credits;
@@ -60,7 +62,7 @@
 body {
   font-size: 14px;
   font-family: Georgia, Times, Times New Roman, serif;
-  color: #294052;
+  color: rgba(68, 114, 148, 1);
   margin: 24px;
   background: 	#F8E4CC;
   line-height: 1.45em;
@@ -92,7 +94,7 @@ pre {
 h1{
   font-family: Georgia, Times, Times New Roman, serif;
   font-size: 2rem;
-  color: #294052;
+  color: rgba(68, 114, 148, 1);
 }
 h1 small {
   font-weight: normal;
