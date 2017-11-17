@@ -26,31 +26,59 @@
 .choroplethmap{
   grid-area:choroplethmap;
   background-color: rgba(143, 188, 219, .8);
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
+  
+
 }
 .treemap{
   grid-area:treemap;
   background-color: rgba(143, 188, 219, .8);
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
+
   
 }
 .buttons{
   grid-area:buttons;
   background-color: rgba(143, 188, 219, .8);
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
   
 
 }
 .parallelcoordinateplot{
   grid-area:parallelcoordinateplot;
   background-color: rgba(68, 114, 148, .8);
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
+
  
 }
 .infosection{
   grid-area:infosection;
   background-color: rgba(143, 188, 219, .8);
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
   
 }
 .slider{
   grid-area:slider;
   background-color: rgba(143, 188, 219, .8);
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
+  border-style: solid;
+  border-color: rgba(68, 114, 148, 1);
+  border-width: thin;
 }
 .credits{
   grid-area:credits;
