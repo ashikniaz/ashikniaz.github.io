@@ -80,6 +80,7 @@
   border-color: rgba(68, 114, 148, 1);
   border-width: thin;
 }
+
 .credits{
   grid-area:credits;
   text-align: center;

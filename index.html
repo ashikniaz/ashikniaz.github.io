@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="parallelcoordinateplot.css">
+	<link rel="stylesheet" type="text/css" href="slider.css">
 
     <script src="leaflet.js"></script>
     <script src="ohiocounties.js"></script>
@@ -52,8 +53,11 @@
                 </div> 
 
                 <div class="slider">
-                    Put the slider here 
-                </div> 
+					<div id="slider" >
+                    <input type="range" min="1980" max="2010" value="1980" step="10" class="slider" id="myRange">
+					<p>Year: <span id="sliderValue"></span></p>
+					</div>
+				</div> 
 
                 <div class="credits">
                    <br />Created By: Ashik Niaz, Ryan Derge, and John Morgan Manos <br /> The Ohio State University 
@@ -62,6 +66,7 @@
             </div>
 
 <script>
+
     var sample_data = [
         { "value": 696126, "name": "White" },
         { "value": 164564, "name": "Black" },
@@ -90,8 +95,18 @@
     .mode("queue")
     .render()
     .brushMode("1D-axes");  // enable brushing
-    
-});
+    });
+	
+	
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("sliderValue");
+	output.innerHTML = slider.value; // Display the default slider value
+
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function() {
+		output.innerHTML = this.value;
+}
+
 
 </script>
 </body>
