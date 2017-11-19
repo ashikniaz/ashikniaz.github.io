@@ -116,7 +116,7 @@
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
 	   
        if (output === 1980){
-	geojson = L.geoJson(countyData1980, {
+	geojson = L.geoJson(countyData2010, {
             style: style,
             onEachFeature: onEachFeature
         }).addTo(map);
@@ -131,7 +131,7 @@
             onEachFeature: onEachFeature
         }).addTo(map);
        } else {
-	geojson = L.geoJson(countyData2010, {
+	geojson = L.geoJson(countyData1980, {
             style: style,
             onEachFeature: onEachFeature
         }).addTo(map);
