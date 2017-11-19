@@ -115,6 +115,7 @@
     	slider.oninput = function() {
     		output.innerHTML = this.value;
 		map.removeLayer(geojson); 
+		/*
 	       if (output === 1980){
 		geojson = L.geoJson(countyData2010, {
 		    style: style,
@@ -136,6 +137,7 @@
 		    onEachFeature: onEachFeature
 		}).addTo(map);
        }
+       */
 	}
 	    
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
