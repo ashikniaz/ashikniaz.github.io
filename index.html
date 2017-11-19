@@ -76,7 +76,7 @@
 
     //global variables:
     var geojson;
-    var geojson2;
+    //var geojson2;
     var map;
     var output;
     // control that shows state info on hover
@@ -116,26 +116,23 @@
     	slider.oninput = function() {
     		output.innerHTML = this.value;
 		map.removeLayer(geojson); 
+		map.removeLayer(geojson2);
 	       if (output == 1980){
-		map.removeLayer(geojson2)
-		geojson2 = L.geoJson(countyData1980, {
+		var geojson2 = L.geoJson(countyData1980, {
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
 	       } else if (output == 1990) {
-		map.removeLayer(geojson2)
-		geojson2 = L.geoJson(countyData1990, {
+		var geojson2 = L.geoJson(countyData1990, {
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
 	       } else if (output == 2000) {
-		map.removeLayer(geojson2)
-		geojson2 = L.geoJson(countyData2000, {
+		var geojson2 = L.geoJson(countyData2000, {
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
 	       } else if (output == 2010) {
-		map.removeLayer(geojson2)
 		var geojson2 = L.geoJson(countyData2010, {
 		    style: style,
 		    onEachFeature: onEachFeature
