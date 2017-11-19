@@ -12,10 +12,10 @@
   grid-template-areas:
   ". . . . ."
   ". title title title ."
-  ". choroplethmap treemap buttons ."
-  ". slider treemap buttons . "
-  ". parallelcoordinateplot parallelcoordinateplot buttons ." 
-  ". infosection infosection buttons ."
+  ". choroplethmap treemap treemap ."
+  ". slider treemap treemap . "
+  ". parallelcoordinateplot parallelcoordinateplot parallelcoordinateplot ." 
+  ". infosection infosection infosection ."
   ". credits credits credits ."
   ". . . . ."
 }
@@ -53,7 +53,7 @@
 
   
 }
-.buttons{
+/*.buttons{
   grid-area:buttons;
   background-color: rgba(143, 188, 219, .8);
   border-style: solid;
@@ -61,7 +61,7 @@
   border-width: thin;
   
 
-}
+}*/
 .parallelcoordinateplot{
   grid-area:parallelcoordinateplot;
   background-color: rgba(68, 114, 148, .8);
