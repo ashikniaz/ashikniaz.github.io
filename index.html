@@ -107,8 +107,14 @@
         // info is declared as a global varialbe, outside the function assigned to the window.onload  
         info.addTo(map);
 
-        //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
 	    
+	    geojson = L.geoJson(countyData2010, {
+            style: style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+	    
+        //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
+	    /*
        if(output === 1980){
 	geojson = L.geoJson(countyData1980, {
             style: style,
@@ -130,7 +136,7 @@
             onEachFeature: onEachFeature
         }).addTo(map);
        }
-	    
+	    */
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
         var legend = L.control({ position: 'bottomright' });
