@@ -12,11 +12,14 @@
     <link rel="stylesheet" type="text/css" href="d3.parcoords.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="parallelcoordinateplot.css">
-	<link rel="stylesheet" type="text/css" href="slider.css">
+    <link rel="stylesheet" type="text/css" href="slider.css">
 
     <script src="leaflet.js"></script>
     <script src="ohiocounties1980.js"></script> <!-- type="text/javascript"-->
     <script src="1980totals.js"></script>
+    <script src="1990totals.js"></script>
+    <script src="2000totals.js"></script>
+    <script src="2010totals.js"></script>
     <script src="d3.v4.min.js"></script>
     <script src="d3.js"></script>
     <script src="d3plus.js"></script>
@@ -102,27 +105,12 @@
         info.addTo(map);
 
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
-       if( output === 1980){
-		geojson = L.geoJson(countyData, {
-           		 style: style,
-            		onEachFeature: onEachFeature
-       		 }).addTo(map);
-       } else if ( output === 1990) {
-	       geojson = L.geoJson(countyData1990, {
-           		 style: style,
-            		onEachFeature: onEachFeature
-       		 }).addTo(map);
-       } else if ( output === 2000) {
-	       geojson = L.geoJson(countyData2000, {
-           		 style: style,
-            		onEachFeature: onEachFeature
-       		 }).addTo(map);
-       } else {
-	       geojson = L.geoJson(countyData2010, {
-           		 style: style,
-            		onEachFeature: onEachFeature
-       		 }).addTo(map);
-       }
+       
+	geojson = L.geoJson(countyData, {
+            style: style,
+            onEachFeature: onEachFeature
+        }).addTo(map);
+
         map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
         var legend = L.control({ position: 'bottomright' });
@@ -226,7 +214,7 @@
     //gets the county information and finds the corresponding data that will be graphed
     info.clicked = function (props) {
         var selectedCounty = props.name;
-        var countyList = countyData.features; 
+        var countyList = countyData1980.features; 
         var countyTotalsArray = countyTotals1980.features; //countyTotals is the js file that contains the graph data
         for(var i = 0; i < countyList.length; i++){
             if(countyTotalsArray[i].County == selectedCounty){
