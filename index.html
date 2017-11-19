@@ -115,11 +115,18 @@
     	slider.oninput = function() {
     		output.innerHTML = this.value;
 		map.removeLayer(geojson);
-		geojson = L.geoJson(countyData2010, {
-           		 style: style,
+		var test = True;
+		if (test){
+			geojson = L.geoJson(countyData2010, {
+           		 	style: style,
            		 onEachFeature: onEachFeature
-     		   }).addTo(map);
-		
+     		   	}).addTo(map);
+		} else {
+			geojson = L.geoJson(countyData2000, {
+				style: style,
+				onEachFeature: onEachFeature
+			}).addTo(map);
+		}
 		/*
 	       if (this.value == 1980){
 		var geojson2 = L.geoJson(countyData1980, {
