@@ -2,44 +2,41 @@
   margin: 0;
   padding: 0;
 }
-.grid{
-  display: grid;
-  height:100%;
-  grid-template-columns: 2.25% 50% 35% 10% 2.25%;
-  grid-template-rows: .5% 5% 47.5% 5% 30% 5% 3% .5%;
-  grid-column-gap: .5%;
-  grid-row-gap: .5%;
-  grid-template-areas:
-  ". . . . ."
-  ". title title title ."
-  ". choroplethmap treemap buttons ."
-  ". slider treemap buttons . "
-  ". parallelcoordinateplot parallelcoordinateplot buttons ." 
-  ". infosection infosection buttons ."
-  ". credits credits credits ."
-  ". . . . ."
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+.title-container{
+  flex: 1;
+}
+.graph-container{
+  flex: 10;
+  display: flex;
+  flex-direction: row; 
+}
+.info-container{
+  flex: 3;
 }
 .title{
- grid-area:title;
  text-align: center;
 }
 .choroplethmap{
-  grid-area:choroplethmap;
+  flex: 1;
   background-color: rgba(143, 188, 219, .8);
   border-style: solid;
   border-color: rgba(68, 114, 148, 1);
   border-width: thin;
-  
-
 }
 .treemap{
-  grid-area:treemap;
+  flex: 1;
   background-color: rgba(143, 188, 219, .8);
   border-style: solid;
   border-color: rgba(68, 114, 148, 1);
-  border-width: thin;
-
-  
+  border-width: thin; 
 }
 .buttons{
   grid-area:buttons;
