@@ -70,6 +70,7 @@
     //global variables:
     var geojson;
     var map;
+    var output;
     // control that shows state info on hover
     var info = L.control();
 
@@ -234,7 +235,7 @@
             .draw()             // finally, draw the visualization!
     	
     	var slider = document.getElementById("myRange");
-    	var output = document.getElementById("sliderValue");
+    	output = document.getElementById("sliderValue");
     	output.innerHTML = slider.value; // Display the default slider value
 
     	// Update the current slider value (each time you drag the slider handle)
