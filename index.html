@@ -200,7 +200,7 @@
     info.clicked = function (props) {
         var selectedCounty = props.name;
         var countyList = countyData.features; 
-        var countyTotalsArray = countyTotals.features; //countyTotals is the js file that contains the graph data
+        var countyTotalsArray = countyTotals1980.features; //countyTotals is the js file that contains the graph data
         for(var i = 0; i < countyList.length; i++){
             if(countyTotalsArray[i].County == selectedCounty){
                 formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
@@ -211,11 +211,11 @@
     //formats the data for the graph so that d3 can understand it
     function formatData(countyTotals){
         var sample_data = [
-            { "value": countyTotals.White, "name": "White" },
-            { "value": countyTotals.Black, "name": "Black" },
-            { "value": countyTotals["American Indian and Alaska Native"], "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
-            { "value": countyTotals["Asian and Pacific Islander"], "name": "Asian and Pacific Islander" },
-            { "value": countyTotals.Hispanic, "name": "Hispanic" }
+            { "value": countyTotals1980.White, "name": "White" },
+            { "value": countyTotals1980.Black, "name": "Black" },
+            { "value": countyTotals1980["American Indian and Alaska Native"], "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": countyTotals1980["Asian and Pacific Islander"], "name": "Asian and Pacific Islander" },
+            { "value": countyTotals1980.Hispanic, "name": "Hispanic" }
         ]
         setData(sample_data);
     }
