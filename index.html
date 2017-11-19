@@ -76,7 +76,7 @@
 
     //global variables:
     var geojson;
-    //var geojson2;
+    var geojson2;
     var map;
     // control that shows state info on hover
     var info = L.control();
@@ -105,7 +105,7 @@
             style: style,
             onEachFeature: onEachFeature
         }).addTo(map);
-	    
+	   
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
 	var slider = document.getElementById("myRange");
     	var output = document.getElementById("sliderValue");
@@ -114,8 +114,13 @@
     	// Update the current slider value (each time you drag the slider handle)
     	slider.oninput = function() {
     		output.innerHTML = this.value;
-		map.removeLayer(geojson); 
-		map.removeLayer(geojson2);
+		map.removeLayer(geojson);
+		geojson = L.geoJson(countyData2010, {
+           		 style: style,
+           		 onEachFeature: onEachFeature
+     		   }).addTo(map);
+		
+		/*
 	       if (this.value == 1980){
 		var geojson2 = L.geoJson(countyData1980, {
 		    style: style,
@@ -136,7 +141,8 @@
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
-       }
+       }*/
+		
 	}
 	    
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
