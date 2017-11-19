@@ -1,4 +1,4 @@
-var countyTotals = {"type":"FeatureCollection","features":﻿[
+var countyTotals1980 = {"type":"FeatureCollection","features":﻿[
  {
    "County": "Adams",
    "White": 24121,
