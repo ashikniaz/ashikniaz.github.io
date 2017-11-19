@@ -115,7 +115,7 @@
     	slider.oninput = function() {
     		output.innerHTML = this.value;
 		map.removeLayer(geojson);
-		if ( Boolean(10 < 9) ) {
+		if ( this.value == 1980) ) {
 			geojson = L.geoJson(countyData2010, {
            		 	style: style,
            		 onEachFeature: onEachFeature
