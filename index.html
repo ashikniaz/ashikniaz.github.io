@@ -75,9 +75,10 @@
     "use strict";
 
     //global variables:
-    //var geojson;
+    var geojson;
+    var geojson2;
     var map;
-    //var output;
+    var output;
     // control that shows state info on hover
     var info = L.control();
 
@@ -101,36 +102,40 @@
         info.addTo(map);
 
 	    
-	    var geojson = L.geoJson(countyData1980, {
+	    geojson = L.geoJson(countyData1980, {
             style: style,
             onEachFeature: onEachFeature
         }).addTo(map);
 	    
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
 	var slider = document.getElementById("myRange");
-    	var output = document.getElementById("sliderValue");
+    	output = document.getElementById("sliderValue");
     	output.innerHTML = slider.value; // Display the default slider value
 
     	// Update the current slider value (each time you drag the slider handle)
     	slider.oninput = function() {
     		output.innerHTML = this.value;
 		map.removeLayer(geojson); 
-	       if (output === 1980){
-		var geojson2 = L.geoJson(countyData1980, {
+	       if (output == 1980){
+		map.removeLayer(geojson2)
+		geojson2 = L.geoJson(countyData1980, {
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
-	       } else if (output === 1990) {
-		var geojson2 = L.geoJson(countyData1990, {
+	       } else if (output == 1990) {
+		map.removeLayer(geojson2)
+		geojson2 = L.geoJson(countyData1990, {
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
-	       } else if (output === 2000) {
-		var geojson2 = L.geoJson(countyData2000, {
+	       } else if (output == 2000) {
+		map.removeLayer(geojson2)
+		geojson2 = L.geoJson(countyData2000, {
 		    style: style,
 		    onEachFeature: onEachFeature
 		}).addTo(map);
-	       } else {
+	       } else if (output == 2010 {
+		map.removeLayer(geojson2)
 		var geojson2 = L.geoJson(countyData2010, {
 		    style: style,
 		    onEachFeature: onEachFeature
