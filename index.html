@@ -314,7 +314,7 @@
             .id("name")         // key for which our data is unique on
             .size("value")      // sizing of blocks
             .draw()             // finally, draw the visualization!
-    	
+	};	
     	
 
         d3.csv('diversityranking.csv', function(data) {
@@ -329,7 +329,7 @@
         .mode("queue")
         .render()
         .brushMode("1D-axes");  // enable brushing
-        })}
+        })
 
 
 </script>
