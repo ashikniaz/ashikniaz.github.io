@@ -102,12 +102,27 @@
         info.addTo(map);
 
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
-       
-	geojson = L.geoJson(countyData, {
-            style: style,
-            onEachFeature: onEachFeature
-        }).addTo(map);
-
+       if( output === 1980){
+		geojson = L.geoJson(countyData, {
+           		 style: style,
+            		onEachFeature: onEachFeature
+       		 }).addTo(map);
+       } else if ( output === 1990) {
+	       geojson = L.geoJson(countyData1990, {
+           		 style: style,
+            		onEachFeature: onEachFeature
+       		 }).addTo(map);
+       } else if ( output === 2000) {
+	       geojson = L.geoJson(countyData2000, {
+           		 style: style,
+            		onEachFeature: onEachFeature
+       		 }).addTo(map);
+       } else {
+	       geojson = L.geoJson(countyData2010, {
+           		 style: style,
+            		onEachFeature: onEachFeature
+       		 }).addTo(map);
+       }
         map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
         var legend = L.control({ position: 'bottomright' });
