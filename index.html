@@ -25,43 +25,39 @@
 </head>
 
 <body>
-        <div class="container">
+    <div class="grid">
 
-            <div class="title-container">
+        <div class="title">
                 <h1><u>How Ethnicity in Ohio Has Changed over the Last 40 Years</u></h1>
             </div> 
 
-            <div class="graph-container">
-                <div class="choroplethmap">
-                     <div id="map"></div>
-                </div> 
-
-                <div class="treemap">
-                    <div id="treemap" ></div>
-                </div> 
-            </div>
-
-            <div class="info-container">
-                <div class="buttons">
-                    Put buttons here
-                </div> 
-
-                <div class="parallelcoordinateplot">
-                    <div id="parallelcoordinateplot" class="parcoords" ></div>
-                </div> 
-
-                <div class="infosection">
-                    Put info about whats currently being displayed here
-                </div> 
-
-                <div class="slider">
-        			<div id="slider" >
-                    <input type="range" min="1980" max="2010" value="1980" step="10" class="slider" id="myRange">
-        			<p>Year: <span id="sliderValue"></span></p>
-        			</div>
-        		</div>
+            <div class="choroplethmap">
+                <div id="map"></div>
             </div> 
 
+            <div class="treemap">
+                <div id="treemap" ></div>
+            </div> 
+
+            <div class="buttons">
+                Put buttons here
+            </div> 
+
+            <div class="parallelcoordinateplot">
+                <div id="parallelcoordinateplot" class="parcoords" ></div>
+            </div> 
+
+            <div class="infosection">
+                Put info about whats currently being displayed here
+            </div> 
+
+            <div class="slider">
+        		<div id="slider" >
+                    <input type="range" min="1980" max="2010" value="1980" step="10" class="slider" id="myRange">
+        		    <p>Year: <span id="sliderValue"></span></p>
+        		</div>
+            </div> 
+            
             <div class="credits">
                <br />Created By: Ashik Niaz, Ryan Derge, and John-Morgan Manos <br /> The Ohio State University 
             </div> 
@@ -245,7 +241,20 @@
     	slider.oninput = function() {
     		output.innerHTML = this.value;
         }
-    }
+
+        d3.csv('diversityranking.csv', function(data) {
+        var colors = d3.scale.category20();
+        var parcoords = d3.parcoords()("#parallelcoordinateplot")
+        .data(data)
+        .hideAxis(["name"])
+        .color(colors)
+        .alpha(0.25)
+        .composite("darken")
+        .margin({ top: 25, left: 25, bottom: 25, right: 25 })
+        .mode("queue")
+        .render()
+        .brushMode("1D-axes");  // enable brushing
+        })}
 
 
 </script>
