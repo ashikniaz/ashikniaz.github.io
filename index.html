@@ -100,21 +100,21 @@
         // info is declared as a global varialbe, outside the function assigned to the window.onload  
         info.addTo(map);
 
-	    /*
+	    
 	    geojson = L.geoJson(countyData1980, {
             style: style,
             onEachFeature: onEachFeature
         }).addTo(map);
-	    */
+	    
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
-	   var slider = document.getElementById("myRange");
+	var slider = document.getElementById("myRange");
     	output = document.getElementById("sliderValue");
     	output.innerHTML = slider.value; // Display the default slider value
 
     	// Update the current slider value (each time you drag the slider handle)
     	slider.oninput = function() {
     		output.innerHTML = this.value;
- 
+		map.removeLayer(geojson); 
 	       if (output === 1980){
 		geojson = L.geoJson(countyData2010, {
 		    style: style,
