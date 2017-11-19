@@ -262,6 +262,22 @@
         });
     }
 
+    var startData1980 = [
+            { "value": 9536632, "name": "White" },
+            { "value": 1068217, "name": "Black" },
+            { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": 49100, "name": "Asian and Pacific Islander" },
+            { "value": 120002, "name": "Hispanic" }
+    ]
+
+    var visualizationStart = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(startData1980)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+	
     //gets the county information and finds the corresponding data that will be graphed
     info.clicked = function (props) {
         var selectedCounty = props.name;
