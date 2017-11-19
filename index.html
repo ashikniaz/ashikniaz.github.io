@@ -83,14 +83,7 @@
 
     window.onload = renderMyMap;
 	
-	var slider = document.getElementById("myRange");
-    	output = document.getElementById("sliderValue");
-    	output.innerHTML = slider.value; // Display the default slider value
-
-    	// Update the current slider value (each time you drag the slider handle)
-    	slider.oninput = function() {
-    		output.innerHTML = this.value;
-        }
+	
 
     function renderMyMap() {
 
@@ -114,28 +107,36 @@
         }).addTo(map);
 	    */
         //geojson is declared as a global varialbe, outside the function assigned to the window.onload  
-	   
-       if (output === 1980){
-	geojson = L.geoJson(countyData2010, {
-            style: style,
-            onEachFeature: onEachFeature
-        }).addTo(map);
-       } else if (output === 1990) {
-	geojson = L.geoJson(countyData1990, {
-            style: style,
-            onEachFeature: onEachFeature
-        }).addTo(map);
-       } else if (output === 2000) {
-	geojson = L.geoJson(countyData2000, {
-            style: style,
-            onEachFeature: onEachFeature
-        }).addTo(map);
-       } else {
-	geojson = L.geoJson(countyData1980, {
-            style: style,
-            onEachFeature: onEachFeature
-        }).addTo(map);
+	   var slider = document.getElementById("myRange");
+    	output = document.getElementById("sliderValue");
+    	output.innerHTML = slider.value; // Display the default slider value
+
+    	// Update the current slider value (each time you drag the slider handle)
+    	slider.oninput = function() {
+    		output.innerHTML = this.value;
+ 
+	       if (output === 1980){
+		geojson = L.geoJson(countyData2010, {
+		    style: style,
+		    onEachFeature: onEachFeature
+		}).addTo(map);
+	       } else if (output === 1990) {
+		geojson = L.geoJson(countyData1990, {
+		    style: style,
+		    onEachFeature: onEachFeature
+		}).addTo(map);
+	       } else if (output === 2000) {
+		geojson = L.geoJson(countyData2000, {
+		    style: style,
+		    onEachFeature: onEachFeature
+		}).addTo(map);
+	       } else {
+		geojson = L.geoJson(countyData1980, {
+		    style: style,
+		    onEachFeature: onEachFeature
+		}).addTo(map);
        }
+	}
 	    
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
