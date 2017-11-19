@@ -116,16 +116,27 @@
     		output.innerHTML = this.value;
 		map.removeLayer(geojson);
 		if ( this.value == 1980 ) {
-			geojson = L.geoJson(countyData2010, {
+			geojson = L.geoJson(countyData1980, {
            		 	style: style,
            		 onEachFeature: onEachFeature
      		   	}).addTo(map);
-		} else {
+		} else if (this.value == 1990) {
+			geojson = L.geoJson(countyData1990, {
+				style: style,
+				onEachFeature: onEachFeature
+			}).addTo(map);
+		} else if (this.value == 2000) {
 			geojson = L.geoJson(countyData2000, {
 				style: style,
 				onEachFeature: onEachFeature
 			}).addTo(map);
+		} else if (this.value == 2010) {
+			geojson = L.geoJson(countyData2010, {
+				style: style,
+				onEachFeature: onEachFeature
+			}).addTo(map);
 		}
+		
 		/*
 	       if (this.value == 1980){
 		var geojson2 = L.geoJson(countyData1980, {
