@@ -133,6 +133,214 @@
 			}).addTo(map);
 		}
 		
+		if (this.value == 1980) {
+           /* var startData = [
+                { "value": 9536632, "name": "White" },
+                { "value": 1068217, "name": "Black" },
+                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+                { "value": 49100, "name": "Asian and Pacific Islander" },
+                { "value": 120002, "name": "Hispanic" }
+            ]
+
+            var visualizationStart = d3plus.viz()
+                .container("#treemap")  // container DIV to hold the visualization
+                .data(startData)  // data to use with the visualization
+                .type("tree_map")   // visualization type
+                .id("name")         // key for which our data is unique on
+                .size("value")      // sizing of blocks
+                .draw()             // finally, draw the visualization!
+                */
+                info.clicked = function (props) {
+        var selectedCounty = props.name;
+        var countyList = countyData1980.features; 
+        var countyTotalsArray = countyTotals1980.features; //countyTotals is the js file that contains the graph data
+        for(var i = 0; i < countyList.length; i++){
+            if(countyTotalsArray[i].County == selectedCounty){
+                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+            }
+        }
+    };
+    //formats the data for the graph so that d3 can understand it
+    function formatData(countyTotals1980){
+        var sample_data = [
+            { "value": countyTotals1980.White, "name": "White" },
+            { "value": countyTotals1980.Black, "name": "Black" },
+            { "value": countyTotals1980["American Indian and Alaska Native"], "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": countyTotals1980["Asian and Pacific Islander"], "name": "Asian and Pacific Islander" },
+            { "value": countyTotals1980.Hispanic, "name": "Hispanic" }
+        ]
+        setData(sample_data);
+    }
+    //actually sets the data inside the graph html element
+    function setData(sample_data){
+        document.getElementById("treemap").innerHTML = ""; //clears your html from previous graph so there's only one at a time
+        // instantiate d3plus
+        var visualization = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(sample_data)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+    }
+        } else if (this.value == 1990)
+        {
+            info.clicked = function (props) {
+        var selectedCounty = props.name;
+        var countyList = countyData1990.features; 
+        var countyTotalsArray = countyTotals1990.features; //countyTotals is the js file that contains the graph data
+        for(var i = 0; i < countyList.length; i++){
+            if(countyTotalsArray[i].County == selectedCounty){
+                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+            }
+        }
+    };
+    //formats the data for the graph so that d3 can understand it
+    function formatData(countyTotals1990){
+        var sample_data = [
+            { "value": countyTotals1990.White, "name": "White" },
+            { "value": countyTotals1990.Black, "name": "Black" },
+            { "value": countyTotals1990["American Indian and Alaska Native"], "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": countyTotals1990["Asian and Pacific Islander"], "name": "Asian and Pacific Islander" },
+            { "value": countyTotals1990.Hispanic, "name": "Hispanic" }
+        ]
+        setData(sample_data);
+    }
+    //actually sets the data inside the graph html element
+    function setData(sample_data){
+        document.getElementById("treemap").innerHTML = ""; //clears your html from previous graph so there's only one at a time
+        // instantiate d3plus
+        var visualization = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(sample_data)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+    }
+            /*var startData = [
+                { "value": 953, "name": "White" },
+                { "value": 1068217, "name": "Black" },
+                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+                { "value": 49100, "name": "Asian and Pacific Islander" },
+                { "value": 102, "name": "Hispanic" }
+            ]
+
+            var visualizationStart = d3plus.viz()
+                .container("#treemap")  // container DIV to hold the visualization
+                .data(startData)  // data to use with the visualization
+                .type("tree_map")   // visualization type
+                .id("name")         // key for which our data is unique on
+                .size("value")      // sizing of blocks
+                .draw()             // finally, draw the visualization!
+            */
+            } else if (this.value == 2000)
+        {                   
+            info.clicked = function (props) {
+        var selectedCounty = props.name;
+        var countyList = countyData2000.features; 
+        var countyTotalsArray = countyTotals2000.features; //countyTotals is the js file that contains the graph data
+        for(var i = 0; i < countyList.length; i++){
+            if(countyTotalsArray[i].County == selectedCounty){
+                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+            }
+        }
+    };
+    //formats the data for the graph so that d3 can understand it
+    function formatData(countyTotals2000){
+        var sample_data = [
+            { "value": countyTotals2000.White, "name": "White" },
+            { "value": countyTotals2000.Black, "name": "Black" },
+            { "value": countyTotals2000["American Indian and Alaska Native"], "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": countyTotals2000["Asian and Pacific Islander"], "name": "Asian and Pacific Islander" },
+            { "value": countyTotals2000.Hispanic, "name": "Hispanic" }
+        ]
+        setData(sample_data);
+    }
+    //actually sets the data inside the graph html element
+    function setData(sample_data){
+        document.getElementById("treemap").innerHTML = ""; //clears your html from previous graph so there's only one at a time
+        // instantiate d3plus
+        var visualization = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(sample_data)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+    }
+            /*
+            var startData = [
+                { "value": 632, "name": "White" },
+                { "value": 1068217, "name": "Black" },
+                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+                { "value": 490, "name": "Asian and Pacific Islander" },
+                { "value": 120002, "name": "Hispanic" }
+            ]
+
+            var visualizationStart = d3plus.viz()
+                .container("#treemap")  // container DIV to hold the visualization
+                .data(startData)  // data to use with the visualization
+                .type("tree_map")   // visualization type
+                .id("name")         // key for which our data is unique on
+                .size("value")      // sizing of blocks
+                .draw()             // finally, draw the visualization!
+       */
+            } else if (this.value == 2010)
+        {   
+            info.clicked = function (props) {
+        var selectedCounty = props.name;
+        var countyList = countyData2010.features; 
+        var countyTotalsArray = countyTotals2010.features; //countyTotals is the js file that contains the graph data
+        for(var i = 0; i < countyList.length; i++){
+            if(countyTotalsArray[i].County == selectedCounty){
+                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+            }
+        }
+    };
+    //formats the data for the graph so that d3 can understand it
+    function formatData(countyTotals2010){
+        var sample_data = [
+            { "value": countyTotals2010.White, "name": "White" },
+            { "value": countyTotals2010.Black, "name": "Black" },
+            { "value": countyTotals2010["American Indian and Alaska Native"], "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": countyTotals2010["Asian and Pacific Islander"], "name": "Asian and Pacific Islander" },
+            { "value": countyTotals2010.Hispanic, "name": "Hispanic" }
+        ]
+        setData(sample_data);
+    }
+    //actually sets the data inside the graph html element
+    function setData(sample_data){
+        document.getElementById("treemap").innerHTML = ""; //clears your html from previous graph so there's only one at a time
+        // instantiate d3plus
+        var visualization = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(sample_data)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+    }
+            /*
+            var startData = [
+                { "value": 9532, "name": "White" },
+                { "value": 1068217, "name": "Black" },
+                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+                { "value": 100, "name": "Asian and Pacific Islander" },
+                { "value": 120002, "name": "Hispanic" }
+            ]
+
+            var visualizationStart = d3plus.viz()
+                .container("#treemap")  // container DIV to hold the visualization
+                .data(startData)  // data to use with the visualization
+                .type("tree_map")   // visualization type
+                .id("name")         // key for which our data is unique on
+                .size("value")      // sizing of blocks
+                .draw()             // finally, draw the visualization!
+            */
+        }
+		
+		
 		/*
 	       if (this.value == 1980){
 		var geojson2 = L.geoJson(countyData1980, {
