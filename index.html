@@ -134,22 +134,23 @@
 		}
 		
 		if (this.value == 1980) {
-           /* var startData = [
-                { "value": 9536632, "name": "White" },
-                { "value": 1068217, "name": "Black" },
-                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
-                { "value": 49100, "name": "Asian and Pacific Islander" },
-                { "value": 120002, "name": "Hispanic" }
+           
+		document.getElementById("treemap").innerHTML = "";
+            var startData = [
+            { "value": 9536632, "name": "White" },
+            { "value": 1068217, "name": "Black" },
+            { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": 49100, "name": "Asian and Pacific Islander" },
+            { "value": 120002, "name": "Hispanic" }
             ]
-
             var visualizationStart = d3plus.viz()
-                .container("#treemap")  // container DIV to hold the visualization
-                .data(startData)  // data to use with the visualization
-                .type("tree_map")   // visualization type
-                .id("name")         // key for which our data is unique on
-                .size("value")      // sizing of blocks
-                .draw()             // finally, draw the visualization!
-                */
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(startData)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+			
                 info.clicked = function (props) {
         var selectedCounty = props.name;
         var countyList = countyData1980.features; 
@@ -185,6 +186,23 @@
     }
         } else if (this.value == 1990)
         {
+		document.getElementById("treemap").innerHTML = "";
+            var startData = [
+            { "value": 9436367, "name": "White" },
+            { "value": 1154251, "name": "Black" },
+            { "value": 20309, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+            { "value": 90863, "name": "Asian and Pacific Islander" },
+            { "value": 138998, "name": "Hispanic" }
+            ]
+   
+             var visualizationStart = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(startData)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+
             info.clicked = function (props) {
         var selectedCounty = props.name;
         var countyList = countyData1990.features; 
@@ -218,24 +236,27 @@
             .size("value")      // sizing of blocks
             .draw()             // finally, draw the visualization!
     }
-            /*var startData = [
-                { "value": 953, "name": "White" },
-                { "value": 1068217, "name": "Black" },
-                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
-                { "value": 49100, "name": "Asian and Pacific Islander" },
-                { "value": 102, "name": "Hispanic" }
-            ]
 
-            var visualizationStart = d3plus.viz()
-                .container("#treemap")  // container DIV to hold the visualization
-                .data(startData)  // data to use with the visualization
-                .type("tree_map")   // visualization type
-                .id("name")         // key for which our data is unique on
-                .size("value")      // sizing of blocks
-                .draw()             // finally, draw the visualization!
-            */
             } else if (this.value == 2000)
-        {                   
+        {      
+		 document.getElementById("treemap").innerHTML = "";
+            
+            var startData = [
+    { "value": 9645453, "name": "White" },
+    { "value": 1301307, "name": "Black" },
+    { "value": 24486, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+    { "value": 135382, "name": "Asian and Pacific Islander" },
+    { "value": 217123, "name": "Hispanic" }
+            ]
+   
+    var visualizationStart = d3plus.viz()
+            .container("#treemap")  // container DIV to hold the visualization
+            .data(startData)  // data to use with the visualization
+            .type("tree_map")   // visualization type
+            .id("name")         // key for which our data is unique on
+            .size("value")      // sizing of blocks
+            .draw()             // finally, draw the visualization!
+    
             info.clicked = function (props) {
         var selectedCounty = props.name;
         var countyList = countyData2000.features; 
@@ -269,15 +290,18 @@
             .size("value")      // sizing of blocks
             .draw()             // finally, draw the visualization!
     }
-            /*
-            var startData = [
-                { "value": 632, "name": "White" },
-                { "value": 1068217, "name": "Black" },
-                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
-                { "value": 490, "name": "Asian and Pacific Islander" },
-                { "value": 120002, "name": "Hispanic" }
-            ]
+           
+            } else if (this.value == 2010)
+        {   
+		document.getElementById("treemap").innerHTML = "";
 
+            var startData = [
+                { "value": 9529237, "name": "White" },
+                { "value": 1417691, "name": "Black" },
+                { "value": 25287, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
+                { "value": 191631, "name": "Asian and Pacific Islander" },
+                { "value": 354674, "name": "Hispanic" }
+            ]
             var visualizationStart = d3plus.viz()
                 .container("#treemap")  // container DIV to hold the visualization
                 .data(startData)  // data to use with the visualization
@@ -285,9 +309,7 @@
                 .id("name")         // key for which our data is unique on
                 .size("value")      // sizing of blocks
                 .draw()             // finally, draw the visualization!
-       */
-            } else if (this.value == 2010)
-        {   
+	    
             info.clicked = function (props) {
         var selectedCounty = props.name;
         var countyList = countyData2010.features; 
@@ -321,23 +343,6 @@
             .size("value")      // sizing of blocks
             .draw()             // finally, draw the visualization!
     }
-            /*
-            var startData = [
-                { "value": 9532, "name": "White" },
-                { "value": 1068217, "name": "Black" },
-                { "value": 14563, "name": "American Indian and Alaska Native" }, //I had use this weird [] way of defining a key for the two labels containing spaces
-                { "value": 100, "name": "Asian and Pacific Islander" },
-                { "value": 120002, "name": "Hispanic" }
-            ]
-
-            var visualizationStart = d3plus.viz()
-                .container("#treemap")  // container DIV to hold the visualization
-                .data(startData)  // data to use with the visualization
-                .type("tree_map")   // visualization type
-                .id("name")         // key for which our data is unique on
-                .size("value")      // sizing of blocks
-                .draw()             // finally, draw the visualization!
-            */
         }
 		
 		
