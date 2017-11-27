@@ -537,7 +537,10 @@
         .margin({ top: 25, left: 25, bottom: 25, right: 25 })
         .mode("queue")
         .render()
-        .brushMode("1D-axes");  // enable brushing
+        .brushMode("1D-axes") // enable brushing
+	.on({
+            "mouseover": function(e) { map.highlight([e])},
+            "mouseout": map.unhighlight });  
         })
 
 
