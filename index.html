@@ -152,15 +152,15 @@
             .draw()             // finally, draw the visualization!
 			
                 info.clicked = function (props) {
-        var selectedCounty = props.name;
-        var countyList = countyData1980.features; 
-        var countyTotalsArray = countyTotals1980.features; //countyTotals is the js file that contains the graph data
-        for(var i = 0; i < countyList.length; i++){
-            if(countyTotalsArray[i].County == selectedCounty){
-                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
-            }
-        }
-    };
+					var selectedCounty = props.name;
+					var countyList = countyData1980.features; 
+					var countyTotalsArray = countyTotals1980.features; //countyTotals is the js file that contains the graph data
+					for(var i = 0; i < countyList.length; i++){
+						if(countyTotalsArray[i].County == selectedCounty){
+							formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+						}
+					}
+				};
     //formats the data for the graph so that d3 can understand it
     function formatData(countyTotals1980){
         var sample_data = [
@@ -204,15 +204,15 @@
             .draw()             // finally, draw the visualization!
 
             info.clicked = function (props) {
-        var selectedCounty = props.name;
-        var countyList = countyData1990.features; 
-        var countyTotalsArray = countyTotals1990.features; //countyTotals is the js file that contains the graph data
-        for(var i = 0; i < countyList.length; i++){
-            if(countyTotalsArray[i].County == selectedCounty){
-                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
-            }
-        }
-    };
+				var selectedCounty = props.name;
+				var countyList = countyData1990.features; 
+				var countyTotalsArray = countyTotals1990.features; //countyTotals is the js file that contains the graph data
+				for(var i = 0; i < countyList.length; i++){
+					if(countyTotalsArray[i].County == selectedCounty){
+						formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+					}
+				}
+			};
     //formats the data for the graph so that d3 can understand it
     function formatData(countyTotals1990){
         var sample_data = [
@@ -258,15 +258,15 @@
             .draw()             // finally, draw the visualization!
     
             info.clicked = function (props) {
-        var selectedCounty = props.name;
-        var countyList = countyData2000.features; 
-        var countyTotalsArray = countyTotals2000.features; //countyTotals is the js file that contains the graph data
-        for(var i = 0; i < countyList.length; i++){
-            if(countyTotalsArray[i].County == selectedCounty){
-                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
-            }
-        }
-    };
+				var selectedCounty = props.name;
+				var countyList = countyData2000.features; 
+				var countyTotalsArray = countyTotals2000.features; //countyTotals is the js file that contains the graph data
+				for(var i = 0; i < countyList.length; i++){
+					if(countyTotalsArray[i].County == selectedCounty){
+						formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+						}
+				}
+			};
     //formats the data for the graph so that d3 can understand it
     function formatData(countyTotals2000){
         var sample_data = [
@@ -311,15 +311,15 @@
                 .draw()             // finally, draw the visualization!
 	    
             info.clicked = function (props) {
-        var selectedCounty = props.name;
-        var countyList = countyData2010.features; 
-        var countyTotalsArray = countyTotals2010.features; //countyTotals is the js file that contains the graph data
-        for(var i = 0; i < countyList.length; i++){
-            if(countyTotalsArray[i].County == selectedCounty){
-                formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
-            }
-        }
-    };
+				var selectedCounty = props.name;
+				var countyList = countyData2010.features; 
+				var countyTotalsArray = countyTotals2010.features; //countyTotals is the js file that contains the graph data
+				for(var i = 0; i < countyList.length; i++){
+					if(countyTotalsArray[i].County == selectedCounty){
+						formatData(countyTotalsArray[i]); //send the data from countyTotals for the correct county to format data
+					}
+				}
+			};
     //formats the data for the graph so that d3 can understand it
     function formatData(countyTotals2010){
         var sample_data = [
@@ -450,7 +450,7 @@
             layer.bringToFront();
         }
         info.update(layer.feature.properties);
-    }
+     }
 
     function resetHighlight(e) {
         geojson.resetStyle(e.target);
@@ -459,7 +459,7 @@
 
     //this happens every time the mouse clicks on a county
     function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
+        //map.fitBounds(e.target.getBounds());
         info.clicked(e.target.feature.properties); //sends the county that was clicked to a new function
     }
 
