@@ -457,17 +457,18 @@
         info.update();
     }
 
-    //this happens every time the mouse clicks on a county
-   // function zoomToFeature(e) {
-   //     map.fitBounds(e.target.getBounds());
-   //     info.clicked(e.target.feature.properties); //sends the county that was clicked to a new function
-   // }
+    this happens every time the mouse clicks on a county
+    function zoomToFeature(e) {
+        //map.fitBounds(e.target.getBounds());
+        //info.clicked(e.target.feature.properties); //sends the county that was clicked to a new function
+	console.log("Test");
+    }
 
     function onEachFeature(feature, layer) {
         layer.on({
             mouseover: highlightFeature,
-            mouseout: resetHighlight //,
-           // click: zoomToFeature Commenting out for now
+            mouseout: resetHighlight ,
+            click: zoomToFeature // Commenting out for now
         });
     }
 
