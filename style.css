@@ -5,7 +5,7 @@
 .grid{
   display: grid;
   height:100%;
-  grid-template-columns: 2.25% 50% 35% 10% 2.25%;
+  grid-template-columns: 2.25% 47.5% 35% 10% 4.75%;
   grid-template-rows: .5% 5% 77% 5% 5% 3% 1%;
   grid-column-gap: .5%;
   grid-row-gap: .5%;
