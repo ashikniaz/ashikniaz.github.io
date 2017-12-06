@@ -6,15 +6,15 @@
   display: grid;
   height:100%;
   grid-template-columns: 2.25% 50% 35% 10% 2.25%;
-  grid-template-rows: .5% 5% 47.5% 5% 30% 5% 3% .5%;
+  grid-template-rows: .5% 5% 77% 5% 5% 3% 1%;
   grid-column-gap: .5%;
   grid-row-gap: .5%;
   grid-template-areas:
   ". . . . ."
   ". title title title ."
   ". choroplethmap treemap treemap ."
-  ". slider treemap treemap . "
-  ". parallelcoordinateplot parallelcoordinateplot parallelcoordinateplot ." 
+  ". choroplethmap treemap treemap . "
+  ". slider treemap treemap ." 
   ". infosection infosection infosection ."
   ". credits credits credits ."
   ". . . . ."
@@ -53,15 +53,7 @@
 
   
 }
-/*.buttons{
-  grid-area:buttons;
-  background-color: rgba(143, 188, 219, .8);
-  border-style: solid;
-  border-color: rgba(68, 114, 148, 1);
-  border-width: thin;
-  
 
-}*/
 .parallelcoordinateplot{
   grid-area:parallelcoordinateplot;
   background-color: rgba(68, 114, 148, .8);
